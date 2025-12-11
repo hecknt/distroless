@@ -47,3 +47,5 @@ run-vm $base_dir=base_dir:
         -enable-kvm \
         -drive if=pflash,format=qcow2,readonly=on,file=/usr/share/edk2/ovmf/OVMF_CODE_4M.qcow2 \
         -drive file={{base_dir}}/bootable.img,format=raw,if=virtio
+
+show-me-the-future: build-containerfile generate-bootable-image run-vm
