@@ -41,13 +41,6 @@ sed -i "/picture-uri/ s/${HARDCODED_MONTH}/${CURRENT_MONTH}/g" "/usr/share/glib-
 rm -f /usr/share/glib-2.0/schemas/gschemas.compiled
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
-# Fonts
-mkdir -p "/usr/share/fonts/Maple Mono"
-mkdir -p "/usr/share/fonts/JetBrains Mono"
-curl -fsSLo /tmp/jbmono.zip "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip"
-unzip /tmp/jbmono.zip -d "/usr/share/fonts/JetBrains Mono/"
-rm /tmp/jbmono.zip
-
 /tmp/ctx/build_scripts/base/branding.sh
 
 # Enable services
