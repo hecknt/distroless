@@ -5,6 +5,7 @@ set -xeuo pipefail
 # Copy files from context
 cp -avf "/tmp/ctx/files"/. /
 
+
 # Caffeine extension setup
 # The Caffeine extension is built/packaged into a temporary subdirectory.
 # It must be moved to the standard extensions directory for GNOME Shell to detect it.
@@ -40,8 +41,7 @@ sed -i "/picture-uri/ s/${HARDCODED_MONTH}/${CURRENT_MONTH}/g" "/usr/share/glib-
 rm -f /usr/share/glib-2.0/schemas/gschemas.compiled
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
-# OS-release customization
-echo "DEFAULT_HOSTNAME=bluefin" | tee -a /usr/lib/os-release
+/tmp/ctx/build_scripts/base/branding.sh
 
 # Enable services
 systemctl enable brew-setup.service
