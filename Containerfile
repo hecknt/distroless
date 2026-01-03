@@ -1,5 +1,6 @@
 FROM scratch AS ctx
 
+COPY files /files
 COPY build_scripts /build_scripts
 COPY --from=ghcr.io/projectbluefin/common:latest /system_files/bluefin /files
 COPY --from=ghcr.io/projectbluefin/common:latest /system_files/shared /files
